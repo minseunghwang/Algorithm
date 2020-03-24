@@ -4,7 +4,7 @@ index = list(map(int,input().split()))
 
 print(index)
 index.set()
-print(index)
+print(index)    
 def black(m,index):
     maxi = 0
     for i in itertools.permutations(index,3):
