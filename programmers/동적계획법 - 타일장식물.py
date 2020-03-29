@@ -10,3 +10,6 @@ def solution(N):
 N = 5 # 26
 N = 6 # 42
 print(solution(N))
+
+
+
