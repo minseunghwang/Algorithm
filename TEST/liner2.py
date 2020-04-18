@@ -1,6 +1,9 @@
-def solution(answer_sheet, sheets):
-    answer = -1
-    return answer
+def solution(test):
+    num = 10000000
 
+    print(f'{num:,}')
 
-print(solution(answer_sheet, sheets))
+    return num
+
+test = 1
+print(solution(test))
