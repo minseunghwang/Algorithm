@@ -35,8 +35,6 @@ def solution2(nums):
         else :
             answer += 1
         print(cand, answer)
-
-
     return answer
 
 
