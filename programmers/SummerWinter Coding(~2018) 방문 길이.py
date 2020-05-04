@@ -1,11 +1,7 @@
 
 def solution(dirs):
-    answer = 0
-
     start = [5,5]
-
     visit = []
-
     for i in dirs:
         temp = start.copy()
         if i == 'U':
@@ -13,11 +9,11 @@ def solution(dirs):
                 temp[1] = start[1] - 1
 
         elif i == 'R':
-            if start[0] < 10:
+            if start[0]+1 <=10:
                 temp[0] = start[0] + 1
 
         elif i == 'D':
-            if start[1]+1 < 10:
+            if start[1]+1 <= 10:
                 temp[1] = start[1] + 1
 
         elif i == 'L':
@@ -32,16 +28,16 @@ def solution(dirs):
     nvisit = []
     for i in visit:
         tmp = sorted(i)
-        print(tmp)
         if tmp not in nvisit:
             nvisit.append(tmp)
-    print(len(nvisit),nvisit)
 
-
-    return answer
+    return len(nvisit)
 
 
 dirs = 'ULURRDLLU'
 dirs = 'LULLLLLLU'
 # dirs = 'LRUDLURD'
+# dirs = 'RRRRRDDDDDD'
+dirs = 'RRRRRRRRRRUUUUUU'
+
 print(solution(dirs))
