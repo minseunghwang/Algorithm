@@ -1,15 +1,14 @@
 import math
 def encryption(s):
-    answer = []
     a = len(s) ** 0.5
+    answer = [[] for i in range(math.ceil(a))]
 
-    for cnt,i in enumerate(s):
-        if cnt != 0 and cnt%math.floor(a) == 0:
-            answer += ' '
-        answer += i
+    for cnt, i in enumerate(s):
+        answer[cnt % math.ceil(a)].append(i)
+    ans = []
+    for i in answer:
+        ans.append(''.join(i))
+    return ' '.join(ans)
 
-    return ''.join(answer)
-
-
-s = 'haveaniceday'
+s = 'chillout'
 print(encryption(s))
