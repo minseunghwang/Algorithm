@@ -13,8 +13,8 @@ def countTriplets(arr, r):
             if i*r in d and i*r*r in d:
                 answer += (j * d[i*r] * d[i*r*r])
     else :
-        print(d[1])
-        answer = (d[1] * (d[1]-1) * (d[1]-2)) // (1 * 2 * 3)
+        print(n)
+        answer = (n * (n-1) * (n-2)) // (1 * 2 * 3)
 
     return answer
 
