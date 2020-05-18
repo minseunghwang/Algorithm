@@ -10,8 +10,10 @@ def appendAndDelete(s, t, k):
             cnt += 1
         else:
             break
+
     if k >= (ls - cnt) + (lt - cnt):
-        return 'Yes'
+        if (ls + lt - 2*cnt) % 2 == 0 or ls + lt == k:
+            return 'Yes'
     return 'No'
 
 s = 'abcd'
