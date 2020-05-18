@@ -1,5 +1,5 @@
 def freqQuery(queries):
-    answer = []
+    answer = ''
     m = {}
 
     for query in queries:
@@ -9,17 +9,16 @@ def freqQuery(queries):
             else:
                 m[query[1]] = 1
 
-        elif query[0] == 2 and m.get(query[1]):
+        elif m.get(query[1]) and query[0] == 2:
             m[query[1]] -= 1
 
         elif query[0] == 3:
-            print(m)
             for i in m.values():
-                if i >= query[1]:
-                    answer.append(1)
+                if i == query[1]:
+                    answer += '1'
                     break
             else:
-                answer.append(0)
+                answer += '0'
     return answer
 
 q = int(input().strip())
