@@ -7,12 +7,16 @@ def isValid(s):
     print(d)
     dval = list(d.values())
     print(dval)
-    sdval = set(dval)
+    sdval = list(set(dval))
     print(sdval)
     mx, mn = max(sdval),min(sdval)
 
+
     if len(sdval) > 2:
         return 'NO'
+    elif len(sdval) == 2 and abs(sdval[0] - sdval[1]) > 1 and 1 not in sdval:
+        return 'NO'
+
     if (dval.count(mx) > 1 and dval.count(mn) > 1):
         return 'NO'
     return 'YES'
