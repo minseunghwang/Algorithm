@@ -1,18 +1,15 @@
 def solution(s):
     answer = ''
+    l = len(s)
 
-    for i in range(1,len(s)//2+1):
-        temp = s[:i]
-        cnt = 1
-        for j in range(i,len(s),i):
-            if temp == s[i:j]:
-                cnt += 1
-            else:
-                if cnt != 1:
-                    answer += (str(cnt) + temp)
-                    temp = s[i:j]
-                    cnt = 1
-        print(answer)
+    temp = 0
+    for i in range(1,l//2+1):
+        count = 1
+        tempStr = s[:i]
+        for j in range(i,l,i):
+            if s[j:j+i] == tempStr:
+                count += 1
+
 
     return answer
 
