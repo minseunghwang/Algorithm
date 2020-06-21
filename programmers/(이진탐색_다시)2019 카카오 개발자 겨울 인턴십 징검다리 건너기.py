@@ -1,32 +1,24 @@
 import copy
 
 def solution(stones, k):
-    left,right = 1, max(stones)
+    left,right = 0, max(stones)
 
-    while right >= left:
-        mid = (right+left) // 2
-
-        temp = []
-        for i in range(len(stones)):
-            temp.append(stones[i] - mid)
-        print(left,right,temp)
+    while right > left:
+        mid = (left+right)//2
 
         cnt = 0
-        check = False
-        for i in range(len(temp)):
-            if temp[i] <= 0:
+        for i in range(len(stones)):
+            if stones[i] - mid <= 0:
                 cnt += 1
-            else :
+            else:
                 cnt = 0
             if cnt >= k:
-                check = True
                 break
 
-        if check is True:
-            right = mid -1
+        if cnt >= k:
+            right = mid - 1
         else:
             left = mid + 1
-
     return left
 
 stones = [2, 4, 5, 3, 2, 1, 4, 2, 5, 1]
