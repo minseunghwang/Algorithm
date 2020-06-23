@@ -2,19 +2,11 @@ from itertools import combinations
 
 def solution(relation):
     answer = 0
-
-    for cnt in range(len(relation)):
-        d = {}
-        for i in relation:
-            print(i)
-            if d.get(i[cnt]) == None:
-                d[i[cnt]] = 1
-            else:
-
-
-    print(d)
-
-
+    flag = True
+    for i in range(1, 1 << len(relation[0])):
+        tmp_set = set()
+        print(tmp_set,i)
+    print(1<<len(relation[0]))
 
 
     return answer
