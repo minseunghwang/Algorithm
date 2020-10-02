@@ -1,20 +1,22 @@
 n = int(input())
 m = int(input())
 s = list(input())
-nl = (2*n)+1
-print(s)
 answer = 0
-temp = s[:nl]
-for i in range(m-nl+1):
-    for j in range(len(temp)-2):
-        print(temp)
-        if temp[j] == 'I' and temp[j+1] == 'O' and temp[j+2] == 'I':
+
+num = 0
+for i in range(m-2):
+    if s[i] == 'I' and s[i+1] == 'O' and s[i+2] == 'I':
+        num += 1
+        if(num == n):
             answer += 1
-    temp
+            num -= 1
+        i += 1
+    elif (i >= 1 and s[i-1] == s[i]):
+        num = 0
 
 print(answer)
 
-
-# 1 IOI
+# 3
 # 13
 # OOIOIOIOIIOII
+
