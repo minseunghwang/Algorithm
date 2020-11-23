@@ -1,6 +1,5 @@
 
 def find_empty_room(x,rooms):
-    print('ㅋㅋ',x,rooms)
     if x not in rooms:
         rooms[x] = x + 1
         return x
