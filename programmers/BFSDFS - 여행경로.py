@@ -1,34 +1,26 @@
 from collections import defaultdict
 
+from collections import defaultdict
+import operator
+
+
 def solution(tickets):
-    answer = []
+    answer = ["ICN"]
 
-    table = defaultdict(list)
+    d = defaultdict(list)
 
-    for f,t in tickets:
-        table[f].append(t)
-    print(table)
-    print(table['ICN'])
-    print(table['SFO'])
+    for i in range(len(tickets)):
+        d[tickets[i][0]].append(tickets[i][1])
+    for i in d:
+        d[i].sort()
+    cnt = len(d)
 
+    while cnt:
+        top = answer[-1]
+        answer.append(d[top].pop(0))
+        if len(d[top]) == 0:
+            cnt -= 1
 
-    # visit = [0 for _ in tickets]
-    #
-    # q = []
-    # for i in range(len(tickets)-1,-1,-1):
-    #     if tickets[i][0] == 'ICN':
-    #         q += [tickets[i]]
-    #
-    # print(q)
-    # print(tickets)
-    #
-    # while q:
-    #     print(q,visit)
-    #     a,vi = q.pop(0)
-    #     for i in range(len(tickets)):
-    #         if tickets[i][0] == a[-1] and vi[i] != 1:
-    #             visit[i] = 1
-    #             q.append([a+[tickets[i][1]],visit])
 
     return answer
 
