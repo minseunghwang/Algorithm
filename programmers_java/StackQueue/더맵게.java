@@ -39,7 +39,6 @@ public class 더맵게 {
                 return -1;
             }
         }
-        return answer;
 	}
 }
 
